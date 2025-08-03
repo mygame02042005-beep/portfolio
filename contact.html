@@ -8,10 +8,14 @@
 </head>
 <body>
 
+  <!-- Preloader -->
   <div id="preloader"><div class="loader"></div></div>
   <button class="toggle-theme" onclick="toggleTheme()">🌗</button>
 
-  <header><h1>Contact Me</h1></header>
+  <header>
+    <h1>Contact Me</h1>
+    <p>Code. Create. Innovate.</p>
+  </header>
 
   <nav>
     <ul>
@@ -23,10 +27,27 @@
   </nav>
 
   <section>
-    <p>Email: <a href="mailto:mdatikurahman65@gmail.com">mdatikurahman65@gmail.com</a></p>
-    <p>Phone: +91-8688548779</p>
-    <p>GitHub: <a href="https://github.com/shradha-khapra" target="_blank">github.com/shradha-khapra</a></p>
-    <p><a href="resume.pdf" download>Download My Resume (PDF)</a></p>
+    <h2>Get in Touch</h2>
+    <!-- ✅ Replace this URL with your Formspree endpoint -->
+    <form action="https://formspree.io/f/xpwljbvo" method="POST">
+      <label for="name">Your Name</label>
+      <input type="text" name="name" id="name" required>
+
+      <label for="email">Your Email</label>
+      <input type="email" name="email" id="email" required>
+
+      <label for="message">Your Message</label>
+      <textarea name="message" id="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <hr />
+
+    <p><strong>Email:</strong> <a href="mailto:mdatikurahman65@gmail.com">mdatikurahman65@gmail.com</a></p>
+    <p><strong>Phone:</strong> +91-8688548779</p>
+    <p><strong>GitHub:</strong> <a href="https://github.com/MdAtiku007" target="_blank">github.com/MdAtiku007</a></p>
+    <p><strong>Resume:</strong> <a href="resume.pdf" download>Download My Resume (PDF)</a></p>
   </section>
 
   <footer><p>&copy; 2025 MOHAMMED ATIKU RAHMAN</p></footer>
@@ -39,9 +60,11 @@
     if (localStorage.getItem('theme') === 'dark') {
       document.body.classList.add('dark-mode');
     }
+
     window.addEventListener('DOMContentLoaded', () => {
-      document.querySelector('section').classList.add('visible');
+      document.querySelectorAll('section').forEach(el => el.classList.add('visible'));
     });
+
     window.addEventListener("load", function () {
       const preloader = document.getElementById("preloader");
       preloader.style.opacity = "0";
