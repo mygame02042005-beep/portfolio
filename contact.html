@@ -5,16 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact | MOHAMMED ATIKU RAHMAN</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-
-  <!-- Preloader -->
+  <!-- 🔄 Preloader -->
   <div id="preloader"><div class="loader"></div></div>
+
+  <!-- 🌗 Dark Mode Toggle -->
   <button class="toggle-theme" onclick="toggleTheme()">🌗</button>
 
   <header>
     <h1>Contact Me</h1>
-    <p>Code. Create. Innovate.</p>
+    <p>Let's connect and build something great together.</p>
   </header>
 
   <nav>
@@ -28,35 +30,46 @@
 
   <section>
     <h2>Get in Touch</h2>
-    <!-- ✅ Replace this URL with your Formspree endpoint -->
-    <form action="https://formspree.io/f/xpwljbvo" method="POST">
+
+    <!-- ✅ Replace "your-id-here" with your Formspree form ID -->
+    <form action="https://formspree.io/f/your-id-here" method="POST">
       <label for="name">Your Name</label>
-      <input type="text" name="name" id="name" required>
+      <input type="text" id="name" name="name" required>
 
       <label for="email">Your Email</label>
-      <input type="email" name="email" id="email" required>
+      <input type="email" id="email" name="email" required>
 
       <label for="message">Your Message</label>
-      <textarea name="message" id="message" rows="5" required></textarea>
+      <textarea id="message" name="message" rows="5" required></textarea>
 
       <button type="submit">Send Message</button>
     </form>
 
     <hr />
 
-    <p><strong>Email:</strong> <a href="mailto:mdatikurahman65@gmail.com">mdatikurahman65@gmail.com</a></p>
-    <p><strong>Phone:</strong> +91-8688548779</p>
-    <p><strong>GitHub:</strong> <a href="https://github.com/MdAtiku007" target="_blank">github.com/MdAtiku007</a></p>
-    <p><strong>Resume:</strong> <a href="resume.pdf" download>Download My Resume (PDF)</a></p>
+    <div class="social-links">
+      <a href="https://github.com/MdAtiku007" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github fa-2x"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/atiku-rahman-11239a331" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin fa-2x"></i>
+      </a>
+    </div>
+
+
+    <p><strong>Resume:</strong> <a href="RESUME(for internship).pdf" download>Download My Resume (PDF)</a></p>
   </section>
 
-  <footer><p>&copy; 2025 MOHAMMED ATIKU RAHMAN</p></footer>
+  <footer>
+    <p>&copy; 2025 MOHAMMED ATIKU RAHMAN</p>
+  </footer>
 
   <script>
     function toggleTheme() {
       document.body.classList.toggle('dark-mode');
       localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
     }
+
     if (localStorage.getItem('theme') === 'dark') {
       document.body.classList.add('dark-mode');
     }
@@ -71,6 +84,5 @@
       setTimeout(() => preloader.style.display = "none", 500);
     });
   </script>
-
 </body>
 </html>
