@@ -7,11 +7,16 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
+  <!-- 🔄 Preloader -->
   <div id="preloader"><div class="loader"></div></div>
+
+  <!-- 🌗 Dark Mode Toggle -->
   <button class="toggle-theme" onclick="toggleTheme()">🌗</button>
 
-  <header><h1>About Me</h1></header>
+  <header>
+    <h1>About Me</h1>
+    <p>Code. Create. Innovate.</p>
+  </header>
 
   <nav>
     <ul>
@@ -24,28 +29,36 @@
 
   <section>
     <img src="Atiku.jpg" alt="Profile Photo" />
-    <p>I'm MOHAMMED ATIKU RAHMAN, a B.Tech CSE student. I focus on development and design, enjoy building clean and functional websites, and love learning new tech.</p>
+    <p>Hello! I'm <strong>MOHAMMED ATIKU RAHMAN</strong>, a passionate Computer Science Engineering student with a growing interest in full-stack development, UI/UX design, and building meaningful digital solutions.</p>
+
+    <p>I enjoy turning ideas into interactive web applications. I’ve worked with HTML, CSS, JavaScript, and Python, and I’m learning backend tools and design systems to deepen my skill set. Whether it’s building responsive UIs or writing efficient logic, I love making things that work well and look clean.</p>
+
+    <p>Currently, I’m exploring React.js, Node.js, and working on personal projects to gain hands-on experience. I'm also comfortable designing layouts and wireframes for smooth user flows.</p>
   </section>
 
-  <footer><p>&copy; 2025 MOHAMMED ATIKU RAHMAN</p></footer>
+  <footer>
+    <p>&copy; 2025 MOHAMMED ATIKU RAHMAN</p>
+  </footer>
 
   <script>
     function toggleTheme() {
       document.body.classList.toggle('dark-mode');
       localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
     }
+
     if (localStorage.getItem('theme') === 'dark') {
       document.body.classList.add('dark-mode');
     }
+
     window.addEventListener('DOMContentLoaded', () => {
-      document.querySelector('section').classList.add('visible');
+      document.querySelectorAll('section').forEach(el => el.classList.add('visible'));
     });
+
     window.addEventListener("load", function () {
       const preloader = document.getElementById("preloader");
       preloader.style.opacity = "0";
       setTimeout(() => preloader.style.display = "none", 500);
     });
   </script>
-
 </body>
 </html>
