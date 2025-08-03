@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | MOHAMMED ATIKU RAHMAN</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="preloader"><div class="loader"></div></div>
+  <button class="toggle-theme" onclick="toggleTheme()">🌗</button>
+
+  <header><h1>Contact Me</h1></header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section>
+    <p>Email: <a href="mailto:mdatikurahman65@gmail.com">mdatikurahman65@gmail.com</a></p>
+    <p>Phone: +91-8688548779</p>
+    <p>GitHub: <a href="https://github.com/shradha-khapra" target="_blank">github.com/shradha-khapra</a></p>
+    <p><a href="resume.pdf" download>Download My Resume (PDF)</a></p>
+  </section>
+
+  <footer><p>&copy; 2025 MOHAMMED ATIKU RAHMAN</p></footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+    }
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+    }
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelector('section').classList.add('visible');
+    });
+    window.addEventListener("load", function () {
+      const preloader = document.getElementById("preloader");
+      preloader.style.opacity = "0";
+      setTimeout(() => preloader.style.display = "none", 500);
+    });
+  </script>
+
+</body>
+</html>
